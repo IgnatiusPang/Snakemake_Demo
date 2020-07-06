@@ -4,16 +4,6 @@
 ## Make sure I start python 
 # module load python/3.7.7
 
-# qsub -I -N SmkDemo -l nodes=1:ppn=12,walltime=12:00:00,mem=60gb
-
-
-### Transfer files with these commands 
-# rsync -artuvz /home/ignatius/PostDoc/2020/StaphCLASH2020/Source/Test_Snakemake/*  clive:/home/z3371724/snakemake-demo
-# rsync -artuvz /home/ignatius/PostDoc/2020/StaphCLASH2020/Source/Test_Snakemake/*  kdm:/home/z3371724/snakemake-demo
-
-# rsync -artuvz clive:/home/z3371724/snakemake-demo/dag3.pdf  /home/ignatius/PostDoc/2020/StaphCLASH2020/Source/Test_Snakemake/
-# rsync -artuvz clive:/home/z3371724/snakemake-demo/rulegraph.pdf  /home/ignatius/PostDoc/2020/StaphCLASH2020/Source/Test_Snakemake/
-
 ## Dry run 
 # snakemake --use-conda -n mapped/A.bam
 
@@ -21,8 +11,9 @@
 # snakemake --use-conda --cores 4  mapped/A.bam
 
 ## -j controls the number of jobs that can be submitted at one time 
-#  snakemake -j 2 --cluster-config cluster.json --cluster "qsub -N {cluster.N} -l nodes={cluster.nodes}:ppn={cluster.ppn},walltime={cluster.walltime},mem={cluster.mem} -M {cluster.email} -m ae -j oe"
 #  snakemake -j 3 --cluster-config cluster.json --cluster "qsub -N {cluster.N} -l nodes={cluster.nodes}:ppn={cluster.ppn},walltime={cluster.walltime},mem={cluster.mem} -M {cluster.email} -m ae -j oe"
+
+## Run Report
 # snakemake --report report.html
 
 samples = ["A", "B", "C"]
