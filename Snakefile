@@ -4,6 +4,12 @@
 ## Make sure I start python 
 # module load python/3.7.7
 
+# --printshellcmds
+#  --latency-wait 20 
+# --use-envmodules 
+#   snakemake -j 12 --unlock --printshellcmds --snakefile jw_bc1.smk
+
+
 ## Dry run 
 # snakemake --use-conda -n mapped/A.bam
 
